@@ -278,6 +278,7 @@ public class PaillierEncryption {
     @discardableResult
     public func add(ciphertext: Bignum) -> PaillierEncryption {
         _ciphertext = (_ciphertext * ciphertext) % publicKey.nsqnum
+        isBlinded = false
         return self
     }
 
@@ -290,6 +291,7 @@ public class PaillierEncryption {
     @discardableResult
     public func multiply(_ scalar: Bignum) -> PaillierEncryption {
         _ciphertext = mod_exp(_ciphertext, scalar, publicKey.nsqnum)
+        isBlinded = false
         return self
     }
 }
