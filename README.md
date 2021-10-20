@@ -17,7 +17,7 @@ Declare a dependency on this package inside your `Package.swift`:
 import BigInt
 import SwiftPaillier
 
-let crypto = SwiftPaillier()
+let crypto = Paillier()
 let cleartext = BigUInt(123456)
 let addend = BigUInt(44)
 
